@@ -5,17 +5,28 @@ namespace HashTablesAndFunctions
     {
         static void Main(string[] args)
         {
-            MyMapNode<string, string> myMapNode = new MyMapNode<string, string>(5);
-            myMapNode.Add("0", "to");
-            myMapNode.Add("1", "be");
-            myMapNode.Add("2", "or");
-            myMapNode.Add("3", "not");
-            myMapNode.Add("4", "to");
-            myMapNode.Add("5", "be");
-            string hash2 = myMapNode.Get("2");
-            Console.WriteLine("2nd hash value: " + hash2);
-            string hash5 = myMapNode.Get("5");
-            Console.WriteLine("5th hash value: " + hash5);
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("\nChoose option to perform \n1.Hash Table \n2.Exit");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        MyMapNode<string, string> myMapNode = new MyMapNode<string, string>(5);
+                        myMapNode.Add("0", "to");
+                        myMapNode.Add("1", "be");
+                        myMapNode.Add("2", "or");
+                        myMapNode.Add("3", "not");
+                        myMapNode.Add("4", "to");
+                        myMapNode.Add("5", "be");
+                        myMapNode.Display();
+                        break;
+                    case 2:
+                        flag = false;
+                        break;
+                }
+            }            
         }
     }
 }

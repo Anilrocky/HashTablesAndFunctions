@@ -69,6 +69,17 @@ namespace HashTablesAndFunctions
             }
             return linkedlist;
         }
+        public void Display()
+        {
+            foreach (var linkedList in items)
+            {
+                if (linkedList != null)
+                    foreach (KeyValue<K,V> keyValue in linkedList)
+                    {
+                        Console.WriteLine(keyValue.Key + " " + keyValue.Value);
+                    }
+            }
+        }
         public struct KeyValue<K, V>
         {
             public K Key { get; set; }
